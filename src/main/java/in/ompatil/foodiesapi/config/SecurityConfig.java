@@ -56,13 +56,16 @@ public class SecurityConfig {
 
     private UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://comforting-tulumba-acb4b3.netlify.app/","https://stellar-brigadeiros-7b0516.netlify.app/"));
+        config.setAllowedOrigins(List.of(
+                "https://comforting-tulumba-acb4b3.netlify.app",
+                "https://stellar-brigadeiros-7b0516.netlify.app"
+        ));
         config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS","PATCH"));
         config.setAllowedHeaders(List.of("Authorization","Content-Type"));
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**",config);
+        source.registerCorsConfiguration("/**", config);
         return source;
     }
 
